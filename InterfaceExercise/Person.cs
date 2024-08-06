@@ -32,6 +32,7 @@ namespace InterfaceExercise
         private int CalculateAge()
         { return DateTime.Now.Year - BirthDate.Year; }
 
+
     }
 
     public class Student : Person, IJob
@@ -74,10 +75,25 @@ namespace InterfaceExercise
             Console.WriteLine(student.GetAge());
             Console.WriteLine(student.GetRole());
 
-            Teacher teacher = new Teacher("f", "l", new DateTime(2020, 9, 11));
+            Teacher teacher = new Teacher("Neti", "Net", new DateTime(2020, 9, 11));
             Console.WriteLine(teacher.GetFullName());
             Console.WriteLine(teacher.GetAge());
             Console.WriteLine(teacher.GetRole());
+
+            // Exercise3.1
+            List <IPerson> persons = new List<IPerson>();
+            persons.Add(student);
+            persons.Add(teacher);
+
+            foreach (var item in persons)
+            {
+                if (item == student) { student.GetRole(); }
+                else if (item == teacher) { teacher.GetRole(); }
+               
+            }
+
+            Dictionary   <string, int> ages = new Dictionary<string, int>();
         }
     }
 }
+ 

@@ -11,6 +11,9 @@ namespace InterfaceExercise
         string GetFullName();
 
         int GetAge();
+
+
+      
        
     }
 
