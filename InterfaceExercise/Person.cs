@@ -26,10 +26,11 @@ namespace InterfaceExercise
 
         public int GetAge() 
         {
-            { return DateTime.Now.Year - BirthDate.Year; }
+            { return CalculateAge(); }
         }
-
-       
+        // exercise 2.1
+        private int CalculateAge()
+        { return DateTime.Now.Year - BirthDate.Year; }
 
     }
 
@@ -39,9 +40,14 @@ namespace InterfaceExercise
 
         public string GetRole()
         {
-            return Role;
+            return GenerateRole(); 
         }
         private readonly string Role = "Student";
+        // exercise 2.2
+        private string GenerateRole()
+        {
+            return Role;
+        }
     }
     public class Teacher : Person, IJob
     {
@@ -49,9 +55,15 @@ namespace InterfaceExercise
 
         public string GetRole()
         {
-            return Role;
+            return GenerateRole();
         }
         private readonly string Role = "Teacher";
+
+        // exercise 2.2
+        private string GenerateRole()
+        {
+            return Role;
+        }
     }
     class Program
     {
