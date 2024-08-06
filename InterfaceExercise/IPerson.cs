@@ -8,5 +8,14 @@ namespace InterfaceExercise
 {
     internal interface IPerson
     {
+        string GetFullName();
+
+        int GetAge();
+       
+    }
+
+    public interface IJob
+    { 
+        string GetRole();
     }
 }
